@@ -1,21 +1,27 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import './App.css'
-
 //import pages to be used here
-import Intro from './pages/intro.jsx';
+import Header from './components/header.jsx';
+import { Element } from "react-scroll"; //
+//import Intro from './components/intro';
+import About from './components/about.jsx';
+import Services from './components/services.jsx';
+import Testimonials from './components/testimonials.jsx';
+import Contact from './components/contact.jsx';
+import Footer from './components/footer.jsx';
+import './App.css';
 
-function App() {
+export default function App() {
   return (
-    <div className = "body">
-      <Router>
-        <Routes>
-          <Route path="/" element={<Intro />} />
-        </Routes>
-      </Router>
+    <div>
+      <Header />
+      {/*<Intro />*/}
+      <About />
+      <Services />
+      <Testimonials />
+      <Contact />
+      <Footer />
     </div>
   );
 }
-
-export default App;

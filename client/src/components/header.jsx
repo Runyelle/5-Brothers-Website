@@ -1,11 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import {Link} from 'react-scroll';
 import './Header.css';
-import logo from '../assets/react.svg';
-//<h3><Link to= '/login'>About</Link></h3>
+import Logo from '../assets/Logo.png';
+
 export default function Header() {
-  const navigate = useNavigate();
 
   return (
     <div>
@@ -18,7 +16,7 @@ export default function Header() {
               <p><b>Services</b></p>
             </Link>
 
-            <img src={logo} alt="Logo" />
+            <img src={Logo} alt="Logo" />
 
             <Link to="testimonials" smooth={true} duration={500}>
               <p><b>Testimonials</b></p>

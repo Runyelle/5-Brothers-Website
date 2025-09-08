@@ -26,8 +26,9 @@ export default function Footer() {
         <div className="footer-areas">
           <h4>Our Service Areas</h4>
           <ul>
-            <li><a href="/services#residential">Residential Design</a></li>
-            <li><a href="/services#industrial">Industrial Design</a></li>
+          <li><Link to="residential" smooth={true} duration={500}>Residential Design</Link></li>
+          <li><Link to="industrial" smooth={true} duration={500}>Industrial Design</Link></li>
+
             {/* Add more areas like machine design, commercial, etc. */}
           </ul>
         </div>

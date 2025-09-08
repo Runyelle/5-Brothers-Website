@@ -18,9 +18,14 @@
     justify-content: center; /* pushes content to the center */
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 1000;
+  }
+
+  .header img{
+    width:75px;
+    height:50px;
   }
 
   .header p:hover{
