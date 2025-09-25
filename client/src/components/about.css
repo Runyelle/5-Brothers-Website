@@ -1,26 +1,41 @@
-.section {
-    min-height: 100vh;
-    /*padding: 4rem;*/
-    border-bottom: 1px solid rgb(65, 65, 65);
-    padding-top: 100px; /* slightly more than header height */
-    min-height: 100vh;
+.section-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 13rem;
+  }
+  
+  .textbox {
+    width: 60%;
+    text-align: left;
+  }
+  
+  .textbox h2 {
+    margin-bottom: 1rem; /* spacing between heading & paragraph */
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  .textbox p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .image {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
   }
 
-.section h2 {
-    padding-left: 12rem;
-    text-align: left;
-    font-size: 2rem;
-    padding-bottom: 0px;
-}
-
-.textbox{
-    padding-left: 13rem;  
-    text-align: left;
-    width: 60%;
-    display: flex;
-}
-
-.image{
-    padding-right: 13rem;
-    width: 40%;
-}
+  .about-text{
+    padding-right: 40px;
+  }
+  .about-text p {
+    margin-bottom: 20px; /* adds space after each paragraph */
+  }
+  
+  .image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
