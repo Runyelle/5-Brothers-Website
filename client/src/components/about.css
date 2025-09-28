@@ -1,41 +1,107 @@
-.section-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 13rem;
+.about-section {
+  padding: 5rem 0;
+  background-color: rgb(32, 32, 37);
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: rgb(10, 120, 10);
+  margin-bottom: 1.5rem;
+}
+
+.about-highlight {
+  color: hsl(var(--primary));
+}
+
+.about-description {
+  font-size: 1.2rem;
+  color: whitesmoke;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.stat-card {
+  background-color: rgb(55, 55, 62);
+  border: .5px solid rgb(89, 97, 111);
+  border-radius: 10px
+}
+
+.stat-card-content {
+  padding: 1rem;
+  text-align: center;
+}
+
+.stat-icon {
+  height: 2rem;
+  width: 2rem;
+  color: darkgreen;
+  margin: 0 auto 0.5rem;
+}
+
+.stat-number {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: whitesmoke;
+}
+
+.stat-label {
+  font-size: 0.875rem;
+  color: whitesmoke;
+}
+
+.about-image-container {
+  position: relative;
+}
+
+.about-image {
+  border-radius: 0.5rem;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+
+.about-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsl(var(--charcoal) / 0.5), transparent);
+  border-radius: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (min-width: 768px) {
+  .about-title {
+    font-size: 3rem;
   }
-  
-  .textbox {
-    width: 60%;
-    text-align: left;
-  }
-  
-  .textbox h2 {
-    margin-bottom: 1rem; /* spacing between heading & paragraph */
-    font-size: 2rem;
-    text-align: left;
-  }
-  
-  .textbox p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-  }
-  
-  .image {
-    width: 40%;
-    display: flex;
-    justify-content: flex-end;
+}
+
+@media (min-width: 1024px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
-  .about-text{
-    padding-right: 40px;
+  .about-title {
+    font-size: 3rem;
   }
-  .about-text p {
-    margin-bottom: 20px; /* adds space after each paragraph */
-  }
-  
-  .image img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
+}

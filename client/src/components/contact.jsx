@@ -1,13 +1,183 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import './Contact.css'
-import { Element } from 'react-scroll';
+import {Button} from "../components/button.jsx";
+import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
+import { Input } from "../components/input";
+import { Textarea } from "../components/textarea";
+import { Phone, Mail, Clock } from "lucide-react"; // removed MapPin
+import { useState } from "react";
+import { useToast } from "../hooks/use-toast.js";
+import "./Contact.css";
 
-export default function Contact() {
-    return (
-    <Element name="contact" className="section">
-        <h2>Contact Us</h2>
-        <p>Some info about the company...</p>
-    </Element>
-    );
-  }
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    projectType: '',
+    message: ''
+  });
+  const { toast } = useToast();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast({
+      title: "Message Sent!",
+      description: "We'll get back to you within 24 hours with a free quote.",
+    });
+    setFormData({ name: '', email: '', phone: '', projectType: '', message: '' });
+  };
+
+  const handleChange = (e) => {
+    setFormData(prev => ({
+      ...prev,
+      [e.target.name]: e.target.value
+    }));
+  };
+
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Call Us",
+      details: ["(832) 372-5970", "Monday - Sunday: 8AM - 5PM"],
+      action: "tel:+18323875970"
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      details: ["rmara1902@gmail.com", "We respond within 24 hours"],
+      action: "mailto:rmara1902@gmail.com"
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      details: ["Mon-Sat: 8AM - 5PM", "Sun: Closed"],
+      action: null
+    }
+  ];
+
+  return (
+    <section id="contact" className="contact-section">
+      <div className="contact-container">
+        <div className="contact-header">
+          <h2 className="contact-title">
+            Get Your <span className="contact-highlight">Free Quote</span>
+          </h2>
+          <p className="contact-description">
+            Ready to start your project? Contact us today for a free consultation and quote. 
+            We're here to help make your construction dreams a reality.
+          </p>
+        </div>
+
+        <div className="contact-content">
+          {/* Contact Form */}
+          <Card className="contact-form-card">
+            <CardHeader>
+              <CardTitle className="form-title">Send Us a <span className = "contact-highlight"> Message </span></CardTitle>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit} className="contact-form">
+                <div className="form-row">
+                  <div className="form-field">
+                    <Input
+                      placeholder="Your Name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      required
+                      className="form-input"
+                    />
+                  </div>
+                  <div className="form-field">
+                    <Input
+                      type="email"
+                      placeholder="Your Email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+                
+                <div className="form-row">
+                  <div className="form-field">
+                    <Input
+                      type="tel"
+                      placeholder="Phone Number"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                  <div className="form-field">
+                    <Input
+                      placeholder="Project Type"
+                      name="projectType"
+                      value={formData.projectType}
+                      onChange={handleChange}
+                      className="form-input"
+                    />
+                  </div>
+                </div>
+
+                <div className="form-field">
+                  <Textarea
+                    placeholder="Tell us about your project..."
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="form-textarea"
+                  />
+                </div>
+
+                <Button 
+                  type="submit" 
+                  size="lg" 
+                  className="form-submit"
+                >
+                  Get Free Quote
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
+
+          {/* Contact Information */}
+          <div className="contact-info">
+            {contactInfo.map((info, index) => (
+              <Card key={index} className="contact-info-card">
+                <CardContent className="contact-info-content">
+                  <div className="info-item">
+                    <div className="info-icon-wrapper">
+                      <info.icon className="info-icon" />
+                    </div>
+                    <div className="info-details">
+                      <h3 className="info-title">{info.title}</h3>
+                      {info.details.map((detail, idx) => (
+                        <p key={idx} className="info-detail">
+                          {info.action && idx === 0 ? (
+                            <a 
+                              href={info.action} 
+                              className="info-link"
+                            >
+                              {detail}
+                            </a>
+                          ) : (
+                            detail
+                          )}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Contact;
