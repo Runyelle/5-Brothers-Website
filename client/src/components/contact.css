@@ -1,6 +1,6 @@
 .contact-section {
   padding: 5rem 0;
-  background-color: rgb(30, 33, 39);
+  background-color: rgb(16, 18, 21);
 }
 
 .contact-container {
@@ -41,7 +41,7 @@
 }
 
 .contact-form-card {
-  background-color: rgb(34, 38, 48);
+  background-color: rgb(24, 27, 34);
   border-radius: 10px;
   border-color: hsl(var(--border));
   border: .5px solid rgb(89, 97, 111);
@@ -50,6 +50,7 @@
 .form-title {
   font-size: 1.5rem;
   color: whitesmoke;
+  text-align: center;
 }
 
 .contact-form {
@@ -66,13 +67,15 @@
 
 .form-field {
   display: flex;
+  padding-left: .60rem;
+  padding-right: .60rem;
   flex-direction: column;
 }
 
 .form-input,
 .form-textarea {
-  background-color: rgb(46, 48, 59);
-  border: 1px solid rgb(82, 83, 88);
+  background-color: rgb(27, 29, 35);
+  border: 1px solid rgb(57, 58, 62);
   border-radius: 8px;
   padding: 0.75rem 1rem;
   color: white;
@@ -86,9 +89,10 @@
 }
 
 .form-submit {
-  width: 100%;
+  width: 75%;
+  height: 75%;
   background-color: rgb(10, 120, 10);
-  color: hsl(var(--primary-foreground));
+  color: whitesmoke;
   border: 1px solid rgb(82, 83, 88);
   padding: 1.5rem;
   font-size: 1.125rem;
@@ -98,7 +102,7 @@
 }
 
 .form-submit:hover {
-  background-color: hsl(var(--primary) / 0.9);
+  background-color: rgb(10, 120, 10);
 }
 
 .contact-info {
@@ -108,7 +112,7 @@
 }
 
 .contact-info-card {
-  background-color: rgb(36, 40, 52);
+  background-color: rgb(24, 27, 34);
   border: .5px solid rgb(89, 97, 111);
   border-radius: 10px;
 }
@@ -124,7 +128,7 @@
 }
 
 .info-icon-wrapper {
-  background-color: hsl(var(--primary) / 0.1);
+  background-color: rgb(24, 27, 34);
   padding: 0.75rem;
   border-radius: 0.5rem;
 }
@@ -142,7 +146,7 @@
 }
 
 .info-detail {
-  color: rgb(169, 175, 191);
+  color: whitesmoke;
   font-size: 0.875rem;
   margin-bottom: 0.25rem;
 }
@@ -154,6 +158,27 @@
 
 .info-link:hover {
   color: hsl(var(--primary) / 0.8);
+}
+
+.contact-submit-btn {
+  width: 100%; /* full width */
+  padding: 1rem 1.25rem;
+  background-color: rgb(10, 120, 10); /* blue */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.contact-submit-btn:hover {
+  background-color: rgb(7, 90, 7);
+}
+
+.contact-submit-btn:active {
+  transform: scale(0.98);
 }
 
 @media (min-width: 768px) {

@@ -131,14 +131,15 @@ const Contact = () => {
                     className="form-textarea"
                   />
                 </div>
-
+                <div className= "form-field">
                 <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="form-submit"
+                type="submit" 
+                size="lg" 
+                className="contact-submit-btn"
                 >
-                  Get Free Quote
+                  Message Us
                 </Button>
+                </div>
               </form>
             </CardContent>
           </Card>
@@ -179,5 +180,5 @@ const Contact = () => {
     </section>
   );
 };
-
+//rgb(24, 27, 34)
 export default Contact;

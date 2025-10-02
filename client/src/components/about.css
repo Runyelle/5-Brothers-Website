@@ -1,6 +1,6 @@
 .about-section {
   padding: 5rem 0;
-  background-color: rgb(32, 32, 37);
+  background-color: rgb(31, 31, 34);
 }
 
 .about-container {
@@ -19,12 +19,12 @@
 .about-title {
   font-size: 2.5rem;
   font-weight: 700;
-  color: rgb(10, 120, 10);
+  color: whitesmoke;
   margin-bottom: 1.5rem;
 }
 
 .about-highlight {
-  color: hsl(var(--primary));
+  color: rgb(10, 120, 10);
 }
 
 .about-description {
@@ -42,7 +42,7 @@
 }
 
 .stat-card {
-  background-color: rgb(55, 55, 62);
+  background-color: rgb(40, 40, 46);
   border: .5px solid rgb(89, 97, 111);
   border-radius: 10px
 }

@@ -1,6 +1,5 @@
 import { Card, CardContent } from "../components/card";
 import { Building, Users, Award, Clock } from "lucide-react";
-import { Element } from "react-scroll";
 import teamImage from "../assets/Logo.png"; // replace with real image later
 import "./About.css";
 
@@ -13,7 +12,7 @@ export default function About() {
   ];
 
   return (
-    <Element name="about" className="about-section">
+    <section id="about" className="about-section">
       <div className="about-container">
         <div className="about-grid">
           {/* Left Content */}
@@ -67,6 +66,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </Element>
+    </section>
   );
 }
