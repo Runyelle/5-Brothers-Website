@@ -59,7 +59,7 @@ const Contact = () => {
       <div className="contact-container">
         <div className="contact-header">
           <h2 className="contact-title">
-            Get Your <span className="contact-highlight">Free Quote</span>
+             <span className="contact-highlight"> Contact </span> Us
           </h2>
           <p className="contact-description">
             Ready to start your project? Contact us today for a free consultation and quote. 
