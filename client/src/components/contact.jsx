@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "../components/card";
 import { Input } from "../components/input";
 import { Textarea } from "../components/textarea";
 import { Phone, Mail, Clock } from "lucide-react"; // removed MapPin
-import { useState } from "react";
+import React, { useState } from "react";
 import { useToast } from "../hooks/use-toast.js";
 import "./Contact.css";
 
@@ -15,15 +15,31 @@ const Contact = () => {
     projectType: '',
     message: ''
   });
-  const { toast } = useToast();
 
-  const handleSubmit = (e) => {
+  const [status, setStatus] = useState(""); // show success/failure message
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours with a free quote.",
-    });
-    setFormData({ name: '', email: '', phone: '', projectType: '', message: '' });
+
+    try {
+      const res = await fetch("http://localhost:3000/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setStatus("Message sent successfully!");
+        setFormData({ name: '', email: '', phone: '', projectType: '', message: '' });
+      } else {
+        setStatus("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setStatus("Something went wrong. Please try again.");
+    }
   };
 
   const handleChange = (e) => {
@@ -62,8 +78,8 @@ const Contact = () => {
              <span className="contact-highlight"> Contact </span> Us
           </h2>
           <p className="contact-description">
-            Ready to start your project? Contact us today for a free consultation and quote. 
-            We're here to help make your construction dreams a reality.
+            Ready to start your project? Contact us today,
+            we're here to help make your construction dreams a reality.
           </p>
         </div>
 
