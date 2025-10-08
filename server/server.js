@@ -8,8 +8,17 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
-app.use(cors());
-app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: [
+      "https://your-s3-website-url.s3-website-us-east-1.amazonaws.com",
+      "http://localhost:3000" // for local testing
+    ],
+    methods: ["GET", "POST"],
+    allowedHeaders: ["Content-Type"],
+  })
+);
+app.use(express.json());
 
 app.get("/", (req, res) => {
   res.send("Server is working");
