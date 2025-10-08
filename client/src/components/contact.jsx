@@ -22,7 +22,7 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:3000/api/send-email", {
+      const res = await fetch(`${process.env.REACT_APP_API_URL}/api/send-email`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

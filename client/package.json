@@ -2,6 +2,7 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://5brothers-website.s3-website.us-east-2.amazonaws.com",
   "type": "module",
   "scripts": {
     "dev": "vite",
