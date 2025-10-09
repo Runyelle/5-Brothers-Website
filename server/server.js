@@ -11,7 +11,7 @@ const PORT = 3000;
 app.use(
   cors({
     origin: [
-      "https://your-s3-website-url.s3-website-us-east-1.amazonaws.com",
+      "https://5brothersdrafting.com",
       "http://localhost:3000" // for local testing
     ],
     methods: ["GET", "POST"],
