@@ -22,7 +22,9 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const API_URL = process.env.REACT_APP_API_URL;
+      //const API_URL = process.env.REACT_APP_API_URL;
+      //const API_URL = "https://api.5brothersdrafting.com";
+      const API_URL = "http://3.141.232.105:3000"
       fetch(`${API_URL}/api/send-email`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
