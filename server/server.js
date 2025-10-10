@@ -12,7 +12,8 @@ app.use(
   cors({
     origin: [
       "https://5brothersdrafting.com",
-      "http://localhost:3000" // for local testing
+      "http://localhost:3000", // for local testing
+      "http://3.141.232.105:3000" 
     ],
     methods: ["GET", "POST"],
     allowedHeaders: ["Content-Type"],
